@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    tools:ignore="ResourceName">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.goldze.sign.ui.LoginViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tv_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="70dp"
+            android:text="@string/sign_welcome_yqx"
+            android:textColor="@color/black_1c"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <EditText
+            android:id="@+id/et_input_phone"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="70dp"
+            android:hint="点击输入手机号"
+            android:inputType="phone"
+            android:maxLength="11"
+            android:textColorHint="@color/grey_99"
+            onCheckedChangedCommand="@{viewModel.userNameTextChangedCommand}"
+            android:textSize="@dimen/dimen_text_16"
+            android:textColor="@color/black_21"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_tip"/>
+
+        <EditText
+            android:id="@+id/et_input_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="20dp"
+            android:hint="输入验证码"
+            android:inputType="number"
+            android:maxLength="6"
+            android:textColorHint="@color/grey_99"
+            android:textSize="@dimen/dimen_text_16"
+            android:textColor="@color/black_21"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_input_phone"/>
+
+        <Button
+            android:id="@+id/btn_verification"
+            android:layout_width="wrap_content"
+            android:layout_height="29dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/bg_get_verification"
+            android:enabled="false"
+            onClickCommand="@{viewModel.checkCodeOnClickCommand}"
+            android:text="@{viewModel.checkCodeBtn}"
+            android:textColor="@drawable/bg_get_verification_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.98"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_input_phone"/>
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="0dp"
+            android:layout_height="44dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="50dp"
+            android:background="@drawable/bg_login_btn"
+            android:elevation="0dp"
+            android:enabled="false"
+            android:text="登录"
+            onClickCommand="@{viewModel.loginOnClickCommand}"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dimen_text_17"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_input_password"/>
+
+        <TextView
+            android:id="@+id/tv_third_party"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="80dp"
+            android:text="第三方账户登录"
+            android:textColor="@color/grey_b3"
+            android:textSize="@dimen/dimen_text_13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_login"/>
+
+        <TextView
+            android:id="@+id/tv_visitor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="27dp"
+            android:padding="10dp"
+            android:text="随便看看"
+            android:textColor="@color/grey_b3"
+            android:textSize="@dimen/dimen_text_13"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/iv_wechat"/>
+
+        <ImageView
+            android:id="@+id/iv_wechat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.38"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_third_party"
+            app:srcCompat="@drawable/icon_wechat"/>
+
+        <ImageView
+            android:id="@+id/iv_qq"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:paddingRight="5dp"
+            android:paddingLeft="5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.257"
+            app:layout_constraintStart_toEndOf="@+id/iv_wechat"
+            app:layout_constraintTop_toBottomOf="@+id/tv_third_party"
+            app:srcCompat="@drawable/icon_qq"/>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

@@ -1,0 +1,11 @@
+<resources>
+    <string name="sign_name">登录组件</string>
+
+    <string name="sign_welcome_yqx">欢迎使用忆奇学</string>
+    <string name="sign_setting_person_info">设置个人信息</string>
+    <string name="sign_i_male">我是男生</string>
+    <string name="sign_i_female">我是女生</string>
+    <string name="sign_ok">确定</string>
+
+    <string name="sign_tip_get_verification">获取验证码</string>
+</resources>
